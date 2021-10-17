@@ -1,0 +1,61 @@
+{% extends 'home/layouts/base.html'%}
+{% load static %}
+{%block body%}
+
+
+
+
+  <div class="news">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+        
+            <div class="col-md-6">
+       
+                <div class="card-body">
+                
+                    <strong> MY Name</strong>
+                
+                    <p class="text-muted">
+                      {{student.name}} 
+                    </p>
+                
+                    <hr>
+                
+                    <strong>Age</strong>
+                
+                    <p class="text-muted"> {{student.age}}</p>
+                     
+                    <hr>
+                
+                    <strong>Phone</strong>
+                
+                    <p class="text-muted">
+                   {{student.phone}} 
+                     
+                    </p>
+                
+                    <hr>
+                
+                    <strong> Email</strong>
+                
+                    <p class="text-muted"> {{student.email}}</p>
+
+                    <hr>
+                
+                    <strong>Address</strong>
+                
+            <p class="text-muted">{{student.address }}</p>
+                   
+                  </div>
+                
+                
+            </div>
+            <div class="col-md-6">
+              <img   src=" {% static 'home/images/'|add:student.img%}" height="500px" width="700px">
+            </div>
+    
+        </div>
+    </div>
+  </div>
+
+{%endblock%}

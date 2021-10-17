@@ -1,0 +1,31 @@
+{% extends 'home/layouts/base.html'%}
+{% load static %}
+{%block body%}
+
+      
+            <div class="news">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                    
+                        <div class="col-md-6">
+                            {% for copy in book.bookinstance_set.all %}
+                              {% if copy.status == 'a' %}
+
+                          <form method="POST" action ="{% url 'borrow_book' copy.id%}" enctype="multipart/form-data">
+
+                            {% csrf_token %}
+                           <button type="submit" class="btn btn-success">Borrow the book</button>
+
+                              </form>
+                              {% endif %}
+                                 {% endfor %} 
+                   
+                           
+                       
+                
+                       </div>
+                </div>
+              </div>
+            </div>
+         
+{%endblock%}

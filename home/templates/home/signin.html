@@ -1,0 +1,32 @@
+{% extends 'home/layouts/base.html'%}
+{% load crispy_forms_tags %}
+{% load static %}
+{%block body%}
+<br><br>
+<div class="team">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-lg-6  mx-auto">
+      <form action="" method="post">
+        {% csrf_token%}
+        {{ form1|crispy}}
+        <div class="input-group mb-3">
+          <input type="email" class="form-control" name="email" placeholder="Email">
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" name="password"placeholder="Password">
+        </div>
+
+        <div class="d-grid gap-2" >       
+            <button type="submit" class="btn btn-primary ">Sign In</button>
+          </div>
+         
+        </div>
+      </form>
+    </div>
+</div>
+</div>
+</div>
+
+{%endblock%}

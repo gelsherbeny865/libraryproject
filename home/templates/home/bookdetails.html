@@ -1,0 +1,56 @@
+{% extends 'home/layouts/base.html'%}
+{% load static %}
+{%block body%}
+
+      
+            <div class="news">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                    
+                        <div class="col-md-6">
+                   
+                            <div class="card-body">
+                            
+                                <strong> Book Name</strong>
+                            
+                                <p class="text-muted">
+                                    {{book.name}}
+                                </p>
+                            
+                                <hr>
+                            
+                                <strong>Description</strong>
+                            
+                                <p class="text-muted"> {{book.descriptione}}</p>
+                                 
+                                <hr>
+                                
+                                      
+                                <strong>BOOK</strong>
+                            
+                                <p class="text-muted">
+                             
+                                    <a href="{% static 'books/files/'|add:book.docfile%}" >{{book.name}} </a>
+                                 
+                                </p>
+                                <hr>
+                                <strong>GO Back Home page</strong>
+                            
+                                <p class="text-muted">
+                             
+                                    <a href="{% url 'home' %}" class="btn btn-primary">BACK To Home</a>
+                                 
+                                </p>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                          <img   src=" {% static 'home/images/'|add:book.img%}" height="500px" width="700px">
+                        </div>
+                
+             
+                </div>
+              </div>
+            </div>
+         
+{%endblock%}

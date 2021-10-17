@@ -1,0 +1,44 @@
+{% extends 'home/layouts/base.html'%}
+{% load static %}
+{%block body%}
+
+<div class="news">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="{% static 'home/images/dd.jpg' %}" style="height:300px; width:700px; margin: 30px;" alt="Image">
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">About Us</h2>
+                <p>
+                    The site seeks to provide the most important books in learning programming languages ​​to help develop and keep pace with the technological age
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+              <div class="team">
+                <div class="container-fluid">
+                    <div class="section-header">
+                        <h2 style="text-align: center;">Our Books</h2>
+        
+                    </div>
+             
+                    <div class="row">
+                        {% for i in books%}
+                        <div class="col-sm-6 col-lg-3 ">
+                            <div class="card" style="width: 18rem; display:inline-block ; margin:10px ; padding:10px">
+                                <img src=" {% static 'home/images/'|add:i.img%} "width='300' height='200' class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{i.name}}</h5>
+                                  <p class="card-text">{{i.descriptione}}</p>
+                                  <a href="{% url 'bookdetails' i.id %}" class="btn btn-primary">{{i.name}} details</a>
+                                </div>
+                              </div>
+                        </div>
+                        {% endfor%}
+                    </div>                
+                </div>
+            </div>
+      {% endblock %}  

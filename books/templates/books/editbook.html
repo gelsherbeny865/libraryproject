@@ -1,0 +1,30 @@
+{% extends '../home/layouts/base.html'%}
+{% load static %}
+{%block body%}
+
+<form role="form"  method="post" action="">
+    {% csrf_token%}
+    <div class="card-body">
+      <div class="form-group">
+        <label> Name </label>
+        <input type="text" class="form-control" name="name" value="{{books.name}}" placeholder="Enter the book name">
+      </div>
+      <br>
+      <div class="form-group">
+        <label> description</label>
+        <input type="text" class="form-control" name="desc" value="{{books.descriptione}}" placeholder="describe the book">
+      </div>
+      <br>
+      <div class="form-group">
+     
+        <label> Image</label>
+        <input type="text" class="form-control" name="img" value="{{books.img}}" placeholder="Image">
+    </div>
+    <!-- /.card-body -->
+    <br>
+    <div class="d-grid gap-2" >
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+
+{%endblock%}

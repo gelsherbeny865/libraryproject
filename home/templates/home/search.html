@@ -1,0 +1,16 @@
+{% extends 'home/layouts/base.html'%}
+{% load static %}
+{%block body%}
+
+
+<div>
+    {% if books %}
+    {% for each_book in books %} 
+    <a href="{% url 'buy_book' pk=each_book.pk %}">
+    <img src="{{each_book.img.url}}" alt="No Image"></a>
+    <p>{{each_book.name}}</p>
+    <p>Rs.{{each_book.descriptione}}</p>   
+</div>
+{% endfor %}
+{% endif %}
+{%endblock%}

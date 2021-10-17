@@ -1,0 +1,28 @@
+{% extends 'home/layouts/base.html'%}
+{% load crispy_forms_tags %}
+{% load static %}
+{%block body%}
+
+
+<div class="team">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 col-lg-6  mx-auto">
+       
+        <form action="" method="post">
+            {% csrf_token%}
+       
+
+            {{ form1|crispy}}
+     <br>
+            <div class="d-grid gap-2" >
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+   
+        </form>
+        <a href="{% url 'signin'%}" class="text-center">I already have  account </a>
+      </div>
+    </div>
+  </div>
+</div>
+{%endblock%}

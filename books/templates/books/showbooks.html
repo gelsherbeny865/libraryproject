@@ -1,0 +1,43 @@
+{% extends '../home/layouts/base.html'%}
+{% load static %}
+{%block body%}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Book Name</th>
+      <th scope="col">Book Description</th>
+      <th scope="col">Book Image</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for i in book %}
+   <div>
+    <tr>
+      <td>{{i.name}} </td>
+      <td>{{i.descriptione}}</td>
+      <td>{{i.img}}</td>
+    <td>
+        <div>
+        <form action="{% url 'deletebooks' i.id %}" method="delete">
+          {% csrf_token %}
+         <input type="submit" class="btn btn-danger" value="Delete">
+        </form> 
+        </div>
+      
+        </td>
+
+      <td>
+        
+          <a href="{% url 'editbooks' i.id %}"> <input type="submit" class="btn btn-primary" value="Edit"></a> 
+           
+      </td>
+    </tr>
+    </div>
+{% endfor%}
+  </tbody>
+</table>
+
+{%endblock%}

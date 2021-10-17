@@ -1,0 +1,33 @@
+{% extends 'home/layouts/base.html'%}
+{% load static%}
+{%block body%}
+<div class="hero" style="margin-top: 150px !important; margin-left: 50px;">
+    <div class="container-fluid">
+        <div class="row align-items-center" >
+            <div class="col-md-7">
+              <form>
+                <div class="mb-3">
+                  <label for="Name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="floatingTextarea2" class="form-label">Message To Us</label>
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave your message here" id="floatingTextarea2" style="height: 100px"></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="background-color: #272475 !important; border-color: #272475; border-radius: 20px 20px; width: 100px;">Send</button>
+              </form>
+            </div>
+            <div class="col-md-5">
+                <img src="{% static 'home/images/s1.jpg'%}" style="height:400px; width:600px" >
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
